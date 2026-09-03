@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 480" fill="none" role="img" aria-label="Abstract machine learning network illustration">
+  <rect width="560" height="480" rx="24" fill="oklch(0.963 0.002 197.1)"/>
+  <circle cx="280" cy="240" r="120" fill="oklch(0.925 0.005 214.3)"/>
+  <circle cx="280" cy="240" r="80" fill="oklch(0.987 0.002 197.1)"/>
+  <g stroke="oklch(0.723 0.014 214.4)" stroke-width="2" stroke-linecap="round">
+    <line x1="280" y1="160" x2="200" y2="120"/>
+    <line x1="280" y1="160" x2="360" y2="120"/>
+    <line x1="280" y1="320" x2="200" y2="360"/>
+    <line x1="280" y1="320" x2="360" y2="360"/>
+    <line x1="200" y1="240" x2="120" y2="240"/>
+    <line x1="360" y1="240" x2="440" y2="240"/>
+    <line x1="200" y1="120" x2="360" y2="360"/>
+    <line x1="360" y1="120" x2="200" y2="360"/>
+  </g>
+  <circle cx="280" cy="160" r="14" fill="oklch(0.218 0.008 223.9)"/>
+  <circle cx="200" cy="120" r="10" fill="oklch(0.56 0.021 213.5)"/>
+  <circle cx="360" cy="120" r="10" fill="oklch(0.56 0.021 213.5)"/>
+  <circle cx="200" cy="360" r="10" fill="oklch(0.56 0.021 213.5)"/>
+  <circle cx="360" cy="360" r="10" fill="oklch(0.56 0.021 213.5)"/>
+  <circle cx="120" cy="240" r="10" fill="oklch(0.56 0.021 213.5)"/>
+  <circle cx="440" cy="240" r="10" fill="oklch(0.56 0.021 213.5)"/>
+  <circle cx="280" cy="320" r="14" fill="oklch(0.218 0.008 223.9)"/>
+  <circle cx="280" cy="240" r="20" fill="oklch(0.218 0.008 223.9)"/>
+</svg>

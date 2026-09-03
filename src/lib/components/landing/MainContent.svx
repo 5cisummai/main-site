@@ -1,0 +1,85 @@
+<script lang="ts">
+	import { HalftoneCMYK } from '@devmischief/shaders-svelte';
+</script>
+
+<article>
+<section>
+
+# Building the future with machine learning
+
+West Ranch Machine Learning is a student-led club exploring AI, data science, and real-world applications, with a specific focus on the **technical** and **mathematical** aspects of machine learning.
+
+[Join the club](#join) [Learn more](#what-we-do)
+
+<figure>
+
+<HalftoneCMYK
+	width="100%"
+	height={480}
+	image="/images/hero-flowers.png"
+	colorBack="#fbfaf4"
+	colorC="#00b3ff"
+	colorM="#fc4f9d"
+	colorY="#ffd900"
+	colorK="#231f20"
+	type="ink"
+	size={0.2}
+	gridNoise={0.2}
+	softness={1}
+	contrast={1}
+	floodC={0.15}
+	floodM={0}
+	floodY={0}
+	floodK={0}
+	gainC={0.3}
+	gainM={0}
+	gainY={0.2}
+	gainK={0}
+	grainMixer={0}
+	grainOverlay={0}
+	grainSize={0.5}
+	fit="cover"
+/>
+
+</figure>
+
+</section>
+
+<section id="about">
+
+## About
+
+West Ranch Machine Learning brings together students curious about **machine learning** and **artificial intelligence**. In this club, you will learn what machine learning is, including core concepts such as **data**, **training**, and **optimization**; different types of models; and real-world applications of these models. A secondary goal is to promote AI education and literacy.
+
+We meet regularly to collaborate, share knowledge, and build skills that matter in college and beyond.
+
+</section>
+
+<section id="what-we-do">
+
+## What we do
+
+- ### Workshops
+
+  Learn Python, neural networks, and modern ML tools through peer-led sessions.
+
+- ### Projects
+
+  Apply machine learning to campus and community problems across different domains.
+
+- ### Competitions
+
+  Train models and compete in Kaggle, hackathons, and regional STEM challenges.
+
+</section>
+
+<section id="join">
+
+## Join
+
+No prior experience required. Stop by a meeting and see what we're building this semester.
+
+[Contact us](mailto:99066922@my.hartdistrict.org)
+
+</section>
+</article>

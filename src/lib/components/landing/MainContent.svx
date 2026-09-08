@@ -9,7 +9,7 @@
 
 West Ranch Machine Learning is a student-led club exploring AI, data science, and real-world applications, with a specific focus on the **technical** and **mathematical** aspects of machine learning.
 
-[Join the club](#join) [Learn more](#what-we-do)
+[Learn more](#what-we-do)
 
 <figure>
 

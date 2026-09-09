@@ -2,8 +2,7 @@
 	const navLinks = [
 		{ href: '#about', label: 'About' },
 		{ href: '#what-we-do', label: 'What We Do' },
-		{ href: '#join', label: 'Join' },
-		{ href: 'mailto:westranchml@example.com', label: 'Contact' }
+		{ href: 'mailto:99066922@my.hartdistrict.org', label: 'Contact' }
 	] as const;
 </script>
 

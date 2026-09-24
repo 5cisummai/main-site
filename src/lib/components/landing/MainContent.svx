@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { HalftoneCMYK } from '@devmischief/shaders-svelte';
+	import MeetingsSection from './MeetingsSection.svelte';
 </script>
 
 <article>
@@ -70,6 +71,12 @@ We meet regularly to collaborate, share knowledge, and build skills that matter 
 - ### Competitions
 
   Train models and compete in Kaggle, hackathons, and regional STEM challenges.
+
+</section>
+
+<section id="meetings">
+
+<MeetingsSection />
 
 </section>
 

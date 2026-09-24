@@ -1,0 +1,97 @@
+<script lang="ts">
+	import PathCompare from '$lib/components/meetings/PathCompare.svelte';
+	import SpamFilterDemo from '$lib/components/meetings/SpamFilterDemo.svelte';
+</script>
+
+<article class="meeting">
+<section>
+
+# Machine Learning: The Basics
+
+You’ve probably used machine learning today without thinking about it — a spam folder that catches junk mail, a playlist that knows what you’ll like next, or a chatbot that answers a homework question.
+
+At its core, machine learning is a way for computers to **spot patterns in examples** and use those patterns to make predictions. Instead of writing a separate rule for every situation, we show a model lots of examples and let it figure out what tends to go together.
+
+</section>
+
+<section>
+
+## Traditional programming vs. machine learning
+
+In everyday programming, *you* write the rules. “If the subject line contains ‘FREE MONEY,’ mark it as spam.” That works until someone invents a new scam wording you never thought of.
+
+Machine learning flips the workflow. You gather examples that are already labeled — spam or not spam — and the model learns which clues show up most often. Later, when a new message arrives, it guesses based on those learned patterns.
+
+Toggle the paths below to see the difference at a glance:
+
+<PathCompare />
+
+</section>
+
+<section>
+
+## The basic learning loop
+
+Most ML projects follow the same loop:
+
+1. **Collect examples** — the data the model can learn from.
+2. **Find patterns** — training looks for relationships in those examples.
+3. **Make predictions** — the trained model tries the patterns on new data.
+4. **Check the result** — measure mistakes; don’t trust a prediction just because a computer made it.
+
+That last step matters. Models are wrong sometimes. Good teams treat evaluation as part of the work, not an afterthought.
+
+### A concrete example: spam detection
+
+Imagine teaching a filter with messages marked **spam** or **not spam**. It might notice that words like “free,” “prize,” or “urgent” show up more in junk, while phrases about club meetings and workshops look ordinary.
+
+It isn’t reading the email the way a person does. It’s scoring patterns it saw during training — which is powerful, and also easy to fool if the training data is thin or biased.
+
+Try a tiny version of that idea below. Type a message (or use a preset) and watch which word clues push the score toward spam or not spam.
+
+<SpamFilterDemo />
+
+</section>
+
+<section>
+
+## Where you may already meet machine learning
+
+- **Spam filters** — sorting inbox junk
+- **Recommendations** — songs, videos, products “you might like”
+- **Image recognition** — tagging photos or unlocking a phone
+- **Chatbots** — answering questions in natural language
+- **AI agents** — tools that take multi-step actions on your behalf
+
+In club, a starter project might ask something simple: do certain study habits line up with quiz scores? That’s a way to practice collecting data and making predictions — not proof that one habit *causes* better grades.
+
+</section>
+
+<section>
+
+## What to keep in mind
+
+Machine learning systems can fail quietly. They can also inherit biases from the examples they trained on. When you use or build AI, get in the habit of asking:
+
+- What examples was this model trained on?
+- Could that data be incomplete, outdated, or skewed?
+- How often are the predictions wrong — and how do we know?
+- Who gets hurt when the model is wrong?
+
+Curiosity about the answers is part of being literate with AI, not just a consumer of demos.
+
+</section>
+
+<section>
+
+## How to keep learning
+
+- **Learn** how different kinds of models work under the hood.
+- **Build** small projects with real tools — even a spreadsheet of labeled examples counts.
+- **Question** big AI claims, fairness, and who benefits.
+- **Share** what you make in competitions, showcases, and club sessions.
+
+The goal isn’t only to *use* AI. It’s to understand how it learns, test what it can do, and stay clear-eyed about where it falls short.
+
+</section>
+</article>

@@ -252,6 +252,46 @@
 		border-top: none;
 	}
 
+	main .meeting ul {
+		margin: 0 0 1rem;
+		padding-left: 1.25rem;
+		list-style: disc;
+	}
+
+	main .meeting ol {
+		margin: 0 0 1rem;
+		padding-left: 1.25rem;
+		list-style: decimal;
+	}
+
+	main .meeting li + li {
+		margin-top: 0.5rem;
+		padding-top: 0;
+		border-top: none;
+	}
+
+	main .meeting .demo {
+		margin: 1.5rem 0 0;
+	}
+
+	main .meeting .compare {
+		margin: 1.25rem 0 0;
+	}
+
+	main .meeting .compare ol,
+	main .meeting .demo ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+	}
+
+	main .meeting .compare li + li,
+	main .meeting .demo li + li {
+		margin-top: 0;
+		padding-top: 0;
+		border-top: none;
+	}
+
 	main a {
 		margin-right: 1rem;
 		text-decoration: underline;

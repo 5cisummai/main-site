@@ -1,0 +1,171 @@
+<script lang="ts">
+	import CodeCell from '$lib/components/meetings/CodeCell.svelte';
+
+	const cell1 = `import pandas as pd
+import torch
+from torch import nn
+from torch.utils.data import TensorDataset, DataLoader, Subset
+import matplotlib.pyplot as plt`;
+
+	const cell2 = `def make_data(filename):
+    path = '/kaggle/input/datasets/oddrationale/mnist-in-csv/'
+    table = pd.read_csv(path + filename)
+    images = torch.tensor(table.iloc[:, 1:].to_numpy(), dtype=torch.float32)
+    images = images.reshape(-1, 1, 28, 28) / 255
+    labels = torch.tensor(table.iloc[:, 0].to_numpy(), dtype=torch.long)
+    return TensorDataset(images, labels)`;
+
+	const cell3 = `train_data = make_data('mnist_train.csv')
+test_data = make_data('mnist_test.csv')
+train_loader = DataLoader(Subset(train_data, range(8000)), batch_size=128, shuffle=True)
+test_loader = DataLoader(test_data, batch_size=256)
+print(len(train_loader.dataset), len(test_data))`;
+
+	const cell4 = `image, label = train_data[0]
+plt.imshow(image.squeeze(), cmap='gray')
+plt.title(f'The correct digit is {label.item()}')
+plt.axis('off');`;
+
+	const cell5 = `model = nn.Sequential(
+    nn.Conv2d(1, 8, kernel_size=3, padding=1),
+    nn.ReLU(),
+    nn.MaxPool2d(2),
+    nn.Flatten(),
+    nn.Linear(8 * 14 * 14, 10)
+)
+print(model)`;
+
+	const cell6 = `loss_fn = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)`;
+
+	const cell7 = `for epoch in range(10):
+    model.train()
+    total_loss = 0
+    for images, labels in train_loader:
+        optimizer.zero_grad()
+        loss = loss_fn(model(images), labels)
+        loss.backward()
+        optimizer.step()
+        total_loss += loss.item()
+    print(epoch + 1, total_loss / len(train_loader))`;
+
+	const cell8 = `model.eval()
+correct = 0
+with torch.no_grad():
+    for images, labels in test_loader:
+        guesses = model(images).argmax(dim=1)
+        correct += (guesses == labels).sum().item()
+print(f'Test accuracy: {correct / len(test_data):.1%}')`;
+
+	const cell9 = `image, actual = test_data[0]
+with torch.no_grad():
+    guess = model(image.unsqueeze(0)).argmax(dim=1).item()
+plt.imshow(image.squeeze(), cmap='gray')
+plt.title(f'CNN guessed {guess} | Actual digit {actual}')
+plt.axis('off');`;
+</script>
+
+<article class="meeting">
+<section>
+
+# Training a CNN on MNIST
+
+In this meeting we train a small convolutional neural network to recognize handwritten digits. The walkthrough uses PyTorch and the MNIST-in-CSV dataset on Kaggle.
+
+</section>
+
+<section>
+
+## Imports
+
+Pull in pandas for the CSV, PyTorch for tensors and the model, and matplotlib to peek at digits.
+
+<CodeCell n={1} title="Imports" code={cell1} />
+
+</section>
+
+<section>
+
+## Load CSV into tensors
+
+Kaggle mounts the dataset under `/kaggle/input/datasets/oddrationale/mnist-in-csv/`. Each row is a label plus 784 pixel values; we reshape to `1×28×28` and scale to `[0, 1]`.
+
+<CodeCell n={2} title="make_data" code={cell2} />
+
+</section>
+
+<section>
+
+## Datasets and loaders
+
+Build train/test sets, then take a subset of 8,000 training examples so the demo stays snappy.
+
+<CodeCell n={3} title="Loaders" code={cell3} />
+
+</section>
+
+<section>
+
+## Peek at a sample
+
+Confirm a digit looks right before training.
+
+<CodeCell n={4} title="Sample image" code={cell4} />
+
+</section>
+
+<section>
+
+## Model
+
+One conv layer, ReLU, max-pool, then a linear head to 10 digit classes.
+
+<CodeCell n={5} title="CNN" code={cell5} />
+
+</section>
+
+<section>
+
+## Loss and optimizer
+
+Cross-entropy for classification; Adam with a small learning rate.
+
+<CodeCell n={6} title="Loss & optimizer" code={cell6} />
+
+</section>
+
+<section>
+
+## Train
+
+Run a short training loop over the batched loaders.
+
+<CodeCell
+	n={7}
+	title="Training loop"
+	code={cell7}
+	note="Originally range(100); using range(10) so the demo finishes faster on Kaggle."
+/>
+
+</section>
+
+<section>
+
+## Test accuracy
+
+Evaluate on the full test set without updating weights.
+
+<CodeCell n={8} title="Evaluate" code={cell8} />
+
+</section>
+
+<section>
+
+## One prediction
+
+Pick a test image and compare the CNN’s guess to the label.
+
+<CodeCell n={9} title="Single prediction" code={cell9} />
+
+</section>
+</article>

@@ -12,5 +12,12 @@ export const meetings: Meeting[] = [
 		title: 'Machine Learning: The Basics',
 		description:
 			'How models learn patterns from data, make predictions, and show up in everyday tools.'
+	},
+	{
+		slug: '2',
+		number: 2,
+		title: 'Training a CNN on MNIST',
+		description:
+			'Build and train a small convolutional network to classify handwritten digits.'
 	}
 ];

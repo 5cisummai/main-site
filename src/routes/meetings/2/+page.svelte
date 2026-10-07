@@ -1,19 +1,17 @@
 <script lang="ts">
 	import Footer from '$lib/components/landing/Footer.svelte';
-	import Meeting2Content from '$lib/components/meetings/Meeting2Content.svx';
 	import Topbar from '$lib/components/landing/Topbar.svelte';
 </script>
 
 <svelte:head>
-	<title>Training a CNN on MNIST — West Ranch Machine Learning</title>
-	<meta
-		name="description"
-		content="Build and train a small convolutional network to classify handwritten digits on MNIST."
-	/>
+	<title>Meeting 2 — West Ranch Machine Learning</title>
 </svelte:head>
 
 <Topbar />
 <main>
-	<Meeting2Content />
+	<article class="meeting">
+		<h2>Meeting 2</h2>
+		<p>Notes for this meeting are not published yet.</p>
+	</article>
 </main>
 <Footer />

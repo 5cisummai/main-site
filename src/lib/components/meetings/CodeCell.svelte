@@ -1,4 +1,10 @@
 <script lang="ts">
+	import hljs from 'highlight.js/lib/core';
+	import python from 'highlight.js/lib/languages/python';
+	import 'highlight.js/styles/github.css';
+
+	hljs.registerLanguage('python', python);
+
 	interface Props {
 		n: number;
 		title?: string;
@@ -8,6 +14,8 @@
 	}
 
 	let { n, title, code, note, lang = 'python' }: Props = $props();
+
+	const highlighted = $derived(hljs.highlight(code, { language: lang }).value);
 </script>
 
 <div class="code-cell">
@@ -17,7 +25,7 @@
 			<span class="cell-title">{title}</span>
 		{/if}
 	</div>
-	<pre><code data-lang={lang}>{code}</code></pre>
+	<pre><code class="hljs language-{lang}">{@html highlighted}</code></pre>
 	{#if note}
 		<p class="note">{note}</p>
 	{/if}
@@ -52,6 +60,7 @@
 	pre {
 		margin: 0;
 		overflow-x: auto;
+		background: transparent;
 	}
 
 	code {
@@ -59,6 +68,21 @@
 		font-size: 0.8125rem;
 		line-height: 1.5;
 		white-space: pre;
+		background: transparent;
+	}
+
+	.code-cell :global(.hljs) {
+		font-family: var(--font-heading);
+		font-size: 0.8125rem;
+		line-height: 1.5;
+		background: transparent;
+		padding: 0;
+		color: inherit;
+	}
+
+	.code-cell :global(.hljs span) {
+		font-family: inherit;
+		font-size: inherit;
 	}
 
 	.note {

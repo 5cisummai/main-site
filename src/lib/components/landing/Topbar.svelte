@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { meetings } from '$lib/data/meetings';
+	import { publishedMeetings } from '$lib/data/meetings';
 
 	let open = $state(false);
 	let meetingsItem: HTMLLIElement | undefined = $state();
@@ -52,7 +52,7 @@
 				</button>
 				{#if open}
 					<ul class="menu" role="menu">
-						{#each meetings as meeting (meeting.slug)}
+						{#each publishedMeetings as meeting (meeting.slug)}
 							<li role="none">
 								<a
 									role="menuitem"

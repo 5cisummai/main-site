@@ -1,17 +1,19 @@
 <script lang="ts">
 	import Footer from '$lib/components/landing/Footer.svelte';
+	import Meeting2Content from '$lib/components/meetings/Meeting2Content.svx';
 	import Topbar from '$lib/components/landing/Topbar.svelte';
 </script>
 
 <svelte:head>
-	<title>Meeting 2 — West Ranch Machine Learning</title>
+	<title>How Machines Learn: Neural Networks, Training, and Better Predictions — West Ranch Machine Learning</title>
+	<meta
+		name="description"
+		content="Foundations of neural networks, how models improve through training, and pitfalls like overfitting and dataset bias."
+	/>
 </svelte:head>
 
 <Topbar />
 <main>
-	<article class="meeting">
-		<h2>Meeting 2</h2>
-		<p>Notes for this meeting are not published yet.</p>
-	</article>
+	<Meeting2Content />
 </main>
 <Footer />

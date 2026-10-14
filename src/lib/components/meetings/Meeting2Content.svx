@@ -1,0 +1,65 @@
+<article class="meeting">
+<section>
+
+# How Machines Learn: Neural Networks, Training, and Better Predictions
+
+The Machine Learning Club’s second meeting introduced the foundations of neural networks and explained how AI models improve through training. The presentation also announced the club’s officers: Jacob Quach as Secretary, Akhil Vedala as Website Manager, and Rohan Kashyap as Logistics Manager.
+
+</section>
+
+<section>
+
+## Understanding Neural Networks
+
+A neural network is a machine learning system loosely inspired by the human brain. It consists of layers of connected computational units, often called “neurons,” that process information and learn patterns. These systems support technologies such as facial recognition, language translation, and voice assistants.
+
+Information moves through an input layer, hidden layers, and an output layer. The values processed throughout the network are numerical. Each connection has a **weight**, which determines how strongly one value influences the next calculation. A **bias** provides an additional adjustable offset.
+
+The slides illustrate this with a simple calculation:
+
+**y = x₁w₁ + x₂w₂ + b**
+
+Here, each input is multiplied by its weight, and the results are added together with a bias. This weighted sum is a basic building block of neural networks.
+
+</section>
+
+<section>
+
+## Learning Through Training
+
+Training teaches a model to recognize patterns by exposing it to examples. Rather than being given a separate rule for every situation, the model repeatedly adjusts its internal parameters to improve its predictions.
+
+The training loop follows four main steps: make a prediction, measure its error, adjust the weights, and repeat. The error is expressed through a **loss function**, which measures how far the model’s output is from the desired result. Lower loss generally means the model is doing better on the task being measured.
+
+One slide illustrates this process using an image of a dog riding a bicycle. The model’s output has a misplaced front wheel compared with the intended image. That mismatch represents an error, which provides feedback for the next round of adjustments.
+
+Backpropagation, named in the meeting’s agenda, connects to this process by calculating how the network’s parameters contribute to loss. An optimization method then uses that information to update the parameters.
+
+</section>
+
+<section>
+
+## When Training Goes Wrong
+
+Successful training requires more than strong performance on familiar examples. A useful model must also perform well on **unseen data**, a capability known as generalization.
+
+The presentation highlights two major problems. **Overfitting** occurs when a model memorizes its training examples instead of learning patterns that apply more broadly. Its training performance may improve while its performance on new data declines.
+
+**Dataset bias** occurs when training examples do not adequately represent the situations the model will encounter. For example, a model trained only on small dogs may struggle to recognize large dogs.
+
+The slides recommend using varied, representative data, evaluating models on unseen examples, and stopping training before memorization becomes a problem.
+
+</section>
+
+<section>
+
+## Exploring Different Types of AI
+
+The presentation concludes with a section listing AI models and introducing “Jev.” The slides describe Jev as a system that is not a large language model, but instead takes a state and possible decisions and produces probabilities, with potential uses in classification.
+
+These model names and capabilities are claims from the presentation, not independently verified information. The broader takeaway is that AI systems can serve different purposes: generating language is only one application, while classification and probability-based decision-making are others.
+
+Ultimately, the meeting emphasized that machine learning is an iterative process. Models make predictions, receive feedback, and adjust, but their usefulness depends on whether what they learn transfers to the real world.
+
+</section>
+</article>

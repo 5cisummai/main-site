@@ -16,8 +16,9 @@ export const meetings: Meeting[] = [
 	{
 		slug: '2',
 		number: 2,
-		title: null,
-		description: null
+		title: 'How Machines Learn: Neural Networks, Training, and Better Predictions',
+		description:
+			'Foundations of neural networks, how models improve through training, and pitfalls like overfitting and dataset bias.'
 	},
 	{
 		slug: '3',
